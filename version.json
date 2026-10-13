@@ -1,0 +1,12 @@
+{
+  "name": "cmdreg",
+  "version": "1.0.0",
+  "date": "2026-10-13",
+  "codename": "",
+  "logo": {
+    "pattern": "mirror",
+    "palette": "#191724,#c4a7e7,#eb6f92,#f6c177,#9ccfd8",
+    "shape": "squircle",
+    "font": "sans"
+  }
+}

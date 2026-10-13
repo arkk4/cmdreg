@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="104" height="20" viewBox="0 0 104 20" role="img" aria-label="cmdreg: v1.0.0">
+<title>cmdreg: v1.0.0</title>
+<defs><clipPath id="b18nwnvxc"><rect width="104" height="20" rx="3"/></clipPath><clipPath id="b18nwnvxv"><rect x="56" width="48" height="20"/></clipPath></defs>
+<g clip-path="url(#b18nwnvxc)">
+<rect width="56" height="20" fill="#555555"/>
+<g clip-path="url(#b18nwnvxv)"><g transform="translate(56 -14) scale(0.48)"><rect width="100" height="100" fill="#eb6f92"/><rect x="10" y="10" width="14" height="14" rx="3" fill="#9ccfd8"/><rect x="74" y="10" width="14" height="14" rx="3" fill="#9ccfd8"/><rect x="26" y="10" width="14" height="14" rx="3" fill="#9ccfd8"/><rect x="58" y="10" width="14" height="14" rx="3" fill="#9ccfd8"/><rect x="42" y="10" width="14" height="14" rx="3" fill="#c4a7e7"/><rect x="10" y="26" width="14" height="14" rx="3" fill="#191724"/><rect x="74" y="26" width="14" height="14" rx="3" fill="#191724"/><rect x="26" y="26" width="14" height="14" rx="3" fill="#191724"/><rect x="58" y="26" width="14" height="14" rx="3" fill="#191724"/><rect x="26" y="74" width="14" height="14" rx="3" fill="#c4a7e7"/><rect x="58" y="74" width="14" height="14" rx="3" fill="#c4a7e7"/><rect x="42" y="74" width="14" height="14" rx="3" fill="#9ccfd8"/></g></g>
+</g>
+<g text-anchor="middle" font-size="11" text-rendering="geometricPrecision">
+<g font-family="Verdana, Geneva, 'DejaVu Sans', sans-serif">
+<text x="28" y="11" dy="0.35em" fill="#010101" fill-opacity=".3" textLength="44">cmdreg</text>
+<text x="28" y="10" dy="0.35em" fill="#fff" textLength="44">cmdreg</text>
+</g>
+<text x="80" y="10" dy="0.35em" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="700" fill="#ffffff" stroke="#000000" stroke-opacity="0.9" stroke-width="2.2" paint-order="stroke" stroke-linejoin="round" textLength="36">v1.0.0</text>
+</g>
+</svg>
