@@ -38,7 +38,9 @@ ALIASES = CONFIG_DIR / "aliases.sh"
 # ─── version ───
 SCRIPT_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 REPO_ROOT  = SCRIPT_DIR.parent
-LOGO_PATH  = REPO_ROOT / "public" / "logo.svg"
+LOGO_PNG_PATH = REPO_ROOT / "public" / "logo.png"
+LOGO_SVG_PATH = REPO_ROOT / "public" / "logo.svg"
+LOGO_PATH     = LOGO_PNG_PATH
 _vfile = REPO_ROOT / "version.json"
 try:
     import json as _json
@@ -87,24 +89,18 @@ def _logo_png_b64() -> "str | None":
     global _logo_cache
     if _logo_cache is not None:
         return _logo_cache
-    p = str(LOGO_PATH)
-    if not os.path.exists(p):
+    if LOGO_PNG_PATH.exists():
+        try:
+            _logo_cache = _b64mod.b64encode(LOGO_PNG_PATH.read_bytes()).decode("ascii")
+            return _logo_cache
+        except OSError:
+            pass
+    if not LOGO_SVG_PATH.exists():
         return None
-    svg_bytes = open(p, "rb").read()
     try:
+        svg_bytes = LOGO_SVG_PATH.read_bytes()
         r = _sp.run(["rsvg-convert", "-w", "128", "-f", "png"],
                     input=svg_bytes, capture_output=True, timeout=5)
-        if r.returncode == 0 and r.stdout:
-            _logo_cache = _b64mod.b64encode(r.stdout).decode("ascii")
-            return _logo_cache
-    except (FileNotFoundError, _sp.TimeoutExpired):
-        pass
-    _JS = ("import('@resvg/resvg-js').then(({Resvg})=>{" +
-           "const png=new Resvg(process.stdin.read(),{fitTo:{mode:'width',value:128}}).render().asPng();" +
-           "process.stdout.write(png);}).catch(()=>process.exit(1));")
-    try:
-        r = _sp.run(["node", "--input-type=module", "-e", _JS],
-                    input=svg_bytes, capture_output=True, timeout=10)
         if r.returncode == 0 and r.stdout:
             _logo_cache = _b64mod.b64encode(r.stdout).decode("ascii")
             return _logo_cache
